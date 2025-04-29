@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AulaLibre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Reserva de Salas de Cómputo</h1>
+      <p>Organiza tus sesiones fácilmente</p>
+    </div>
+    <div class="parallax">
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#f0f4f8" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,213.3C672,224,768,192,864,181.3C960,171,1056,181,1152,192C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="salas-section" data-aos="fade-up">
+      <h2>Salas Disponibles</h2>
+      <div class="carousel">
+        <button class="carousel-btn prev">❮</button>
+        <div class="carousel-inner" id="listaSalas"></div>
+        <button class="carousel-btn next">❯</button>
+      </div>
+    </section>
+
+    <section class="calendar-section" data-aos="fade-up">
+      <h2>Calendario de Disponibilidad</h2>
+      <div class="calendar-controls">
+        <button id="prevDay">Día Anterior</button>
+        <span id="currentDate"></span>
+        <button id="nextDay">Día Siguiente</button>
+      </div>
+      <div class="calendar-wrapper">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Sala 1</th>
+              <th>Sala 2</th>
+              <th>Sala 3</th>
+              <th>Sala 4</th>
+              <th>Sala 5</th>
+              <th>Sala 6</th>
+              <th>Sala 7</th>
+              <th>Sala 8</th>
+              <th>Sala 9</th>
+              <th>Sala 10</th>
+              <th>Sala 11</th>
+              <th>Sala 12</th>
+              <th>Sala 13</th>
+              <th>Sala 14</th>
+              <th>Sala 15</th>
+              <th>Sala 16</th>
+              <th>Sala 17</th>
+              <th>Sala 18</th>
+              <th>Sala 19</th>
+              <th>Sala 20</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="form-section" data-aos="zoom-in">
+      <h2>Reservar Sala</h2>
+      <form id="reservaForm" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" required />
+        </div>
+        <div class="form-group">
+          <label for="sala">Sala</label>
+          <select id="sala" required></select>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <select id="fecha" required></select>
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora</label>
+          <select id="hora" required></select>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+
+    <section class="reservas-section" data-aos="fade-up">
+      <h2>Reservas Guardadas</h2>
+      <ul id="listaReservas"></ul>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Reserva realizada correctamente ✅</div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Sistema de reservas</p>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93824e1fea4944de',t:'MTc0NTk2NjQ2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

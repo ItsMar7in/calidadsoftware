@@ -1,0 +1,308 @@
+/* Header animado */
+.hero {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.layer img {
+    width: 100px;
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+}
+
+.layer-back { transform: translateY(20px); }
+.layer-mid { transform: translateY(10px); }
+.layer-front { transform: translateY(0); }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.salas-section, .form-section, .reservas-section, .calendar-section {
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.sala-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.4s;
+}
+
+.sala-card:hover {
+    transform: scale(1.05);
+}
+
+.sala-card button {
+    margin-top: 10px;
+    background: #2563eb;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* Formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+input:invalid, select:invalid {
+    border-color: #f87171;
+}
+
+button[type="submit"] {
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* Reservas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f3f4f6;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: none;
+    animation: fadein 0.5s ease forwards;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background: #e5e7eb;
+    margin-top: 60px;
+}
+
+button.reservada {
+    background: #9ca3af !important;
+    cursor: not-allowed;
+}
+
+/* Calendario */
+.calendar-section {
+    overflow-x: auto;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.calendar-controls button {
+    background: #2563eb;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.calendar-controls button:hover {
+    transform: scale(1.05);
+}
+
+.calendar-wrapper {
+    overflow-x: auto;
+}
+
+.calendar-table {
+    width: 100%;
+    min-width: 2000px; /* Asegura que la tabla sea ancha para 20 salas */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    min-width: 80px; /* Ancho mínimo para cada columna */
+}
+
+.calendar-table th {
+    background: #2563eb;
+    color: white;
+}
+
+.calendar-table td.free {
+    background: #10b981;
+    color: white;
+}
+
+.calendar-table td.occupied {
+    background: #ef4444;
+    color: white;
+}
+.wave{
+    margin-top: 70px;
+}
