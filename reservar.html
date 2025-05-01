@@ -2,15 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Inicio - AulaLibre</title>
+  <title>Reservar - AulaLibre</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script defer src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
   <!-- Navbar -->
- <!-- Navbar + Parallax Header -->
+   <!-- Navbar + Parallax Header -->
 <nav class="navbar">
     <div class="navbar-container">
       <a href="index.html" class="logo">AulaLibre</a>
@@ -50,15 +48,36 @@
       </svg>
     </div>
   </header>
-
   
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Sistema de reservas</p>
-    </div>
-  </footer>
-
-  <script>AOS.init();</script>
+  <main class="container">
+    <section class="form-section">
+      <h2>Reservar Sala</h2>
+      <form id="reservaForm" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" required />
+        </div>
+        <div class="form-group">
+          <label for="sala">Sala</label>
+          <select id="sala" required></select>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <select id="fecha" required></select>
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora</label>
+          <select id="hora" required></select>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+  </main>
+  <div id="toast" class="toast">Reserva realizada correctamente ✅</div>
 </body>
 </html>

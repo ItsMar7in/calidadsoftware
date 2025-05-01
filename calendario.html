@@ -2,15 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Inicio - AulaLibre</title>
+  <title>Calendario - AulaLibre</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script defer src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
   <!-- Navbar -->
- <!-- Navbar + Parallax Header -->
+<!-- Navbar + Parallax Header -->
 <nav class="navbar">
     <div class="navbar-container">
       <a href="index.html" class="logo">AulaLibre</a>
@@ -50,15 +48,32 @@
       </svg>
     </div>
   </header>
-
   
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Sistema de reservas</p>
-    </div>
-  </footer>
-
+  <main class="container">
+    <section class="calendar-section">
+      <h2>Calendario de Disponibilidad</h2>
+      <div class="calendar-controls">
+        <button id="prevDay">Día Anterior</button>
+        <span id="currentDate"></span>
+        <button id="nextDay">Día Siguiente</button>
+      </div>
+      <div class="calendar-wrapper">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Sala 1</th><th>Sala 2</th><th>Sala 3</th><th>Sala 4</th><th>Sala 5</th>
+              <th>Sala 6</th><th>Sala 7</th><th>Sala 8</th><th>Sala 9</th><th>Sala 10</th>
+              <th>Sala 11</th><th>Sala 12</th><th>Sala 13</th><th>Sala 14</th><th>Sala 15</th>
+              <th>Sala 16</th><th>Sala 17</th><th>Sala 18</th><th>Sala 19</th><th>Sala 20</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>  
   <script>AOS.init();</script>
+  
 </body>
 </html>

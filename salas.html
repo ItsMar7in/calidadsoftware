@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salas - AulaLibre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">AulaLibre</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#">Salas</a>
+          <ul class="dropdown-menu">
+            <li><a href="salas.html">Ver Salas</a></li>
+            <li><a href="reservar.html">Reservar</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Calendario</a>
+          <ul class="dropdown-menu">
+            <li><a href="calendario.html">Disponibilidad</a></li>
+            <li><a href="reservas.html">Mis Reservas</a></li>
+          </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <button class="toggle-btn">☰</button>
+    </div>
+  </nav>
+  
+  <!-- Hero con parallax -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Reserva de Salas de Cómputo</h1>
+      <p>Organiza tus sesiones fácilmente</p>
+    </div>
+    <div class="parallax">
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#f0f4f8" fill-opacity="1"
+          d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,213.3C672,224,768,192,864,181.3C960,171,1056,181,1152,192C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+      </svg>
+    </div>
+  </header>
+  
+  <main class="container">
+    <!-- Carrusel de salas -->
+    <section class="salas-section">
+      <h2>Salas Disponibles</h2>
+      <div class="carousel">
+        <button class="carousel-btn prev">❮</button>
+        <div class="carousel-inner" id="listaSalas"></div>
+        <button class="carousel-btn next">❯</button>
+      </div>
+    </section>
+
+    <!-- Calendario de disponibilidad -->
+    <section class="calendar-section">
+      <h2>Calendario de Disponibilidad</h2>
+      <div class="calendar-controls">
+        <button id="prevDay">Día Anterior</button>
+        <span id="currentDate"></span>
+        <button id="nextDay">Día Siguiente</button>
+      </div>
+      <div class="calendar-wrapper">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Sala 1</th><th>Sala 2</th><th>Sala 3</th><th>Sala 4</th><th>Sala 5</th>
+              <th>Sala 6</th><th>Sala 7</th><th>Sala 8</th><th>Sala 9</th><th>Sala 10</th>
+              <th>Sala 11</th><th>Sala 12</th><th>Sala 13</th><th>Sala 14</th><th>Sala 15</th>
+              <th>Sala 16</th><th>Sala 17</th><th>Sala 18</th><th>Sala 19</th><th>Sala 20</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Formulario de reserva -->
+    <section class="form-section">
+      <h2>Reservar Sala</h2>
+      <form id="reservaForm" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" required />
+        </div>
+        <div class="form-group">
+          <label for="sala">Sala</label>
+          <select id="sala" required></select>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <select id="fecha" required></select>
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora</label>
+          <select id="hora" required></select>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+
+    <!-- Lista de reservas -->
+    <section class="reservas-section">
+      <h2>Reservas Guardadas</h2>
+      <ul id="listaReservas"></ul>
+    </section>
+  </main>
+
+  <!-- Notificación de éxito -->
+  <div id="toast" class="toast">Reserva realizada correctamente ✅</div>
+</body>
+</html>

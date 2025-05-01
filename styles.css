@@ -303,6 +303,121 @@ button.reservada {
     background: #ef4444;
     color: white;
 }
-.wave{
+
+.wave {
     margin-top: 70px;
 }
+/* Navbar */
+.navbar {
+    background: #163da7;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    color:#163da7;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px;
+  }
+  
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 35px;
+    left: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    min-width: 160px;
+    z-index: 200;
+  }
+  
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #1e3a8a;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f4f8;
+  }
+  
+  .toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #1e3a8a;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      padding: 10px 0;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      background: #25bdeb;
+    }
+  
+    .dropdown-menu li a {
+      color: white;
+    }
+  
+    .toggle-btn {
+      display: block;
+    }
+  }
+  
